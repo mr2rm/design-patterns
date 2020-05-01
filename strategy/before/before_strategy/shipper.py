@@ -1,3 +1,4 @@
+# TODO: convert to ENUM
 class Shipper:
     fedex = 1
     ups = 2

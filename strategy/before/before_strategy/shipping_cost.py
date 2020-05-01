@@ -1,8 +1,10 @@
 from before_strategy import Shipper
 
 
+# TODO: violates O in SOLID
 class ShippingCost:
     def shipping_cost(self, order):
+        # TODO: long sequence of if/elif/else
         if order.shipper == Shipper.fedex:
             return self._fedex_cost(order)
         elif order.shipper == Shipper.ups:
