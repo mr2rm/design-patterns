@@ -1,26 +1,30 @@
-from before_strategy import Order, Shipper, ShippingCost
+from strategy import Order, ShippingCost
+from strategy import FedExStrategy, PostalStrategy, UPSStrategy
 
 # Test Federal Express shipping
 
-order = Order(Shipper.fedex)
+order = Order()
 # TODO: violates D in SOLID
-cost_calulator = ShippingCost()
+strategy = FedExStrategy()
+cost_calulator = ShippingCost(strategy)
 cost = cost_calulator.shipping_cost(order)
 assert cost == 3.0
 
 # Test UPS shipping
 
-order = Order(Shipper.ups)
+order = Order()
 # TODO: violates D in SOLID
-cost_calulator = ShippingCost()
+strategy = UPSStrategy()
+cost_calulator = ShippingCost(strategy)
 cost = cost_calulator.shipping_cost(order)
 assert cost == 4.0
 
 # Test Postal Service shipping
 
-order = Order(Shipper.postal)
+order = Order()
 # TODO: violates D in SOLID
-cost_calulator = ShippingCost()
+strategy = PostalStrategy()
+cost_calulator = ShippingCost(strategy)
 cost = cost_calulator.shipping_cost(order)
 assert cost == 5.0
 
