@@ -2,8 +2,6 @@ import abc
 
 
 class MyOldABC(object):
-    """Abstract Base Class Definition (Python 2)"""
-    __metaclass__ = abc.ABCMeta
 
     @abc.abstractmethod
     def do_something(self, value):
@@ -15,7 +13,10 @@ class MyOldABC(object):
 
 
 class MyABC(metaclass=abc.ABCMeta):
-    """Abstract Base Class Definition (Python 3)"""
+    """
+    Abstract Base Class Definition
+    Old Style: "__metaclass__ = abc.ABCMeta"
+    """
 
     @abc.abstractmethod
     def do_something(self, value):
@@ -27,7 +28,7 @@ class MyABC(metaclass=abc.ABCMeta):
 
 
 class MyClass(MyABC):
-    """MyABC Implementation"""
+    """Implementation of MyABC"""
 
     def __init__(self, value=None):
         self._myprop = value
@@ -40,3 +41,9 @@ class MyClass(MyABC):
     def some_property(self):
         """Implementation of abstract property"""
         return self._myprop
+
+
+a = MyClass(value=42)
+print(a.some_property)
+a.do_something(value=41)
+print(a.some_property)
