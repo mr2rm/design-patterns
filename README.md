@@ -12,11 +12,13 @@ Code snippets to describe different design patterns in Python
 
 ## Strategy (Policy)
 
-- **Behavioral** pattern (control object operation)
+- **Behavioral** pattern (control operations of object)
 - Family of algorithms (independent with different implementations but same input/output) &rarr; encapsulate &oplus; interchangable
-- *Sign*: long sequence of `if`-`elif`-`else`
-- **Implementations**
+- *Sign*: sequence of `if`-`elif`-`else`
+- **Implementation**
   1. *Object* (using **ABC**)
   2. *Function* (ordinary or `lambda`)
 
 ![Strategy Pattern Structure](/assets/strategy.png)
+
+## Observer
