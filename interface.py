@@ -1,17 +1,6 @@
 import abc
 
 
-class MyOldABC(object):
-
-    @abc.abstractmethod
-    def do_something(self, value):
-        """Required method"""
-
-    @abc.abstractproperty
-    def some_property(self):
-        """Required property"""
-
-
 class MyABC(metaclass=abc.ABCMeta):
     """
     Abstract Base Class Definition
