@@ -19,6 +19,29 @@ Code snippets to describe different design patterns in Python
   1. *Object* (using **ABC**)
   2. *Function* (ordinary or `lambda`)
 
-![Strategy Pattern Structure](/assets/strategy.png)
+![Strategy Pattern Structure](/assets/strategy_uml.png)
 
-## Observer
+## Observer (Dependents, Publish-Subscribe)
+
+- **Behavioral** pattern
+- Used for *Event Monitoring*
+- Defines one-to-many relationship: state changes &rarr; notify dependents
+- **Subject** (publisher)
+  - Attach/Detach observers
+  - Notify observers &rarr; call `update` method of observer
+- **Observer** (interested in subject changes)
+  - Update &rarr; get state of subject
+- **Instruction**
+  1. *Observer:* Attach to or detach from subject
+  2. *Subject:* send notification
+  3. *Observer:* recieve notification
+  4. *Observer:* get/set state of subject
+- **SOLID** Check
+  - S &rarr; subject, object (observer) and main
+  - OID &rarr; *ABC*
+  - Encapsulation (*OOP*) &rarr; self-contained observers
+- Use cases
+  - Events in **GUI** apps (e.g. mouse and keyboard)
+  - **MVC** &rarr; **M**: Subject & **V**: Observer
+  - Push notification
+- Prevent *Dangling Reference* by using **Context Manager** in Python
