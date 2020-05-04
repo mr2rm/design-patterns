@@ -19,7 +19,7 @@ Code snippets to describe different design patterns in Python
   1. *Object* (using **ABC**)
   2. *Function* (ordinary or `lambda`)
 
-![Strategy Pattern Structure](/assets/strategy_uml.png)
+![Strategy Pattern](/assets/strategy.png)
 
 ## Observer (Dependents, Publish-Subscribe)
 
@@ -45,3 +45,5 @@ Code snippets to describe different design patterns in Python
   - **MVC** &rarr; **M**: Subject & **V**: Observer
   - Push notification
 - Prevent *Dangling Reference* by using **Context Manager** in Python
+
+![Observer Pattern](/assets/observer.png)
