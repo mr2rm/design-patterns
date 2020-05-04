@@ -22,3 +22,6 @@ class ForecastKPIs(AbsObserver):
         print(
             f'Tickets expected to be closed in next hour: {self.new_tickets}')
         print('*****\n')
+
+    def __exit__(self, *args, **kwargs):
+        self._kpis.detach(self)

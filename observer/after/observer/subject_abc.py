@@ -3,7 +3,7 @@ from observer import AbsObserver
 
 
 class AbsSubject(metaclass=abc.ABCMeta):
-    # TODO: shared between all instances!
+    # Resolve "Dangling Reference" issue using "Context Manager"
     _observers = set()
 
     def attach(self, observer):
@@ -20,3 +20,9 @@ class AbsSubject(metaclass=abc.ABCMeta):
                 observer.update()
             else:
                 observer.update(value)
+
+    def __enter__(self, *args, **kwargs):
+        return self
+
+    def __exit__(self, *args, **kwargs):
+        self._observers.clear()
