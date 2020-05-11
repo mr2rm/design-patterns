@@ -3,8 +3,8 @@ from command_executor import CommandExecutor
 
 
 if len(sys.argv) < 2:
-    print("""Usage: python -m before <command>
-Commands:
+    print('Usage: python -m before <command> [arguments]')
+    print("""Commands:
     CreateOrder
     UpdateQuantity number
     ShipOrder""")
