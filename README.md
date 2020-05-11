@@ -10,6 +10,11 @@ Code snippets to describe different design patterns in Python
     1. **Mixin** &rarr; implementation (breaks the *Dependency Inversion* rule of **SOLID**)
     2. **ABC** (*PEP 3119*)
 
+## Null
+
+- Resolve null object checking (`if`-`not`-`null`) issue for caller
+- Implements common interface with no-action logic
+
 ## Strategy (Policy) [Behavioral]
 
 - Family of algorithms (independent with different implementations but same input/output) &rarr; encapsulate &oplus; interchangable
