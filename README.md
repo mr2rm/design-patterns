@@ -69,3 +69,5 @@ Code snippets to describe different design patterns in Python
 - Encapsulate commands (separate & hide executation info) &rArr; O
 - Utilise *Null Pattern* (undefined commands)
 - Import commands in invoker: ~~O~~ &rarr; package includes all commands (load on runtime)
+
+![Command Pattern](/assets/command.png)
