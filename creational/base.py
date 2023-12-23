@@ -7,6 +7,9 @@ class Dog:
     def speak(self) -> str:
         return "Woof!"
 
+    def __str__(self) -> str:
+        return "Dog"
+
 
 class Cat:
     """A simple cat class"""
@@ -17,19 +20,5 @@ class Cat:
     def speak(self) -> str:
         return "Meow!"
 
-
-def get_pet(pet: str = "dog") -> Dog:
-    """The Factory Method"""
-
-    pets = dict(
-        dog=Dog("Hope"),
-        cat=Cat("Peace"),
-    )
-    return pets[pet]
-
-
-d = get_pet("dog")
-print(d.speak())
-
-c = get_pet("cat")
-print(c.speak())
+    def __str__(self) -> str:
+        return "Cat"
