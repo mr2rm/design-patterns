@@ -1,7 +1,24 @@
+from abc import ABC, abstractmethod
+from typing import Any
+
 from creational.base import Dog
 
 
-class DogFactory:
+class PetFactory(ABC):
+    """Abstract Factory"""
+
+    @staticmethod
+    @abstractmethod
+    def get_pet() -> Any:
+        ...
+
+    @staticmethod
+    @abstractmethod
+    def get_food() -> Any:
+        ...
+
+
+class DogFactory(PetFactory):
     """Concrete Factory"""
 
     @staticmethod
@@ -20,7 +37,7 @@ class DogFactory:
 class PetStore:
     """Houses our Abstract Factory"""
 
-    def __init__(self, pet_factory: DogFactory) -> None:
+    def __init__(self, pet_factory: PetFactory) -> None:
         """pet_factory is our Abstract Factory"""
 
         self._pet_factory = pet_factory
