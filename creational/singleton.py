@@ -8,6 +8,7 @@ class Borg:
 
 
 class Singleton(Borg):
+    """The singleton class"""
 
     def __init__(self, **kwargs) -> None:
         Borg.__init__(self)
