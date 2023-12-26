@@ -1,7 +1,19 @@
 from abc import ABC, abstractmethod
 from typing import Any
 
-from creational.base import Dog
+
+class Dog:
+    """A simple dog class"""
+
+    def __init__(self, name: str) -> None:
+        self._name = name
+
+    @staticmethod
+    def speak() -> str:
+        return "Woof!"
+
+    def __str__(self) -> str:
+        return "Dog"
 
 
 class PetFactory(ABC):
