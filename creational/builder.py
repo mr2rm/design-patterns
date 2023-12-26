@@ -1,5 +1,4 @@
-from abc import ABC, abstractmethod
-from typing import Optional
+from typing import Optional, Any
 
 
 class Car:
@@ -14,7 +13,7 @@ class Car:
         return f"{self.model} | {self.tires} | {self.engine}"
 
 
-class Builder(ABC):
+class Builder:
     """Abstract Builder"""
 
     def __init__(self) -> None:
@@ -22,18 +21,6 @@ class Builder(ABC):
 
     def create_new_car(self) -> None:
         self.car = Car()
-
-    @abstractmethod
-    def add_model(self) -> None:
-        ...
-
-    @abstractmethod
-    def add_tires(self) -> None:
-        ...
-
-    @abstractmethod
-    def add_engine(self) -> None:
-        ...
 
 
 class SkyLarkBuilder(Builder):
@@ -56,7 +43,7 @@ class SkyLarkBuilder(Builder):
 class Director:
     """Director"""
 
-    def __init__(self, builder: Builder) -> None:
+    def __init__(self, builder: Any) -> None:
         self._builder = builder
 
     def construct_car(self) -> None:

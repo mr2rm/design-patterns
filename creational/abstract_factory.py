@@ -1,4 +1,3 @@
-from abc import ABC, abstractmethod
 from typing import Any
 
 
@@ -16,21 +15,7 @@ class Dog:
         return "Dog"
 
 
-class PetFactory(ABC):
-    """Abstract Factory"""
-
-    @staticmethod
-    @abstractmethod
-    def get_pet() -> Any:
-        ...
-
-    @staticmethod
-    @abstractmethod
-    def get_food() -> Any:
-        ...
-
-
-class DogFactory(PetFactory):
+class DogFactory:
     """Concrete Factory"""
 
     @staticmethod
@@ -49,7 +34,7 @@ class DogFactory(PetFactory):
 class PetStore:
     """Houses our Abstract Factory"""
 
-    def __init__(self, pet_factory: PetFactory) -> None:
+    def __init__(self, pet_factory: Any) -> None:
         """pet_factory is our Abstract Factory"""
 
         self._pet_factory = pet_factory

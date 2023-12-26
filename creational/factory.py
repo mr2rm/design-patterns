@@ -1,3 +1,6 @@
+from typing import Any
+
+
 class Dog:
     """A simple dog class"""
 
@@ -26,7 +29,7 @@ class Cat:
         return "Cat"
 
 
-def get_pet(pet: str = "dog") -> Dog:
+def get_pet(pet: str = "dog") -> Any:
     """The Factory Method"""
 
     pets = dict(
